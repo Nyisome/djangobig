@@ -1,0 +1,45 @@
+<!--h3>Update</h3>
+
+<form method="POST" action=""> 
+    {% csrf_token %} 
+    {{form}} 
+<input type="submit" name="Update Task" >
+
+
+
+</form-->
+
+
+
+<!DOCTYPE html>
+
+<html>
+ 
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+</head>
+
+<body style="background-color:#d4d4d4">
+
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-body">
+            <h3>Update</h3>
+            <form method="POST" action="">
+                {%csrf_token%}
+                {{form}} 
+                <input type="hidden" name= "Confirm" value="" style="width: 150; display: inline-block;"><br><br>
+                <a class="btn btn-warning" href="/">Cancel<a>
+                <input class="prevent-submit btn btn-danger" type="submit" name="Update Task" style="width: 150px; display: inline-block;">
+
+            </form>
+            
+        </div>
+    </div>
+</div>
+</body>
