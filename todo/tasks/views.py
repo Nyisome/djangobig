@@ -1,4 +1,5 @@
 from functools import total_ordering
+from turtle import title
 from django.shortcuts import render
 from django.http import HttpResponse 
 from django.shortcuts import redirect 
@@ -15,8 +16,15 @@ from .forms import *
 def index(request):
     #return HttpResponse('Testing Passed') 
 
+    if 'search' in request.GET:
+        search=request.GET['search']
+        tasks=Task.objects.filter(title__icontains=search)
+    else:
+        tasks=Task.objects.all()
 
-    tasks=Task.objects.all()
+
+
+    # tasks=Task.objects.all()
     total_tasks = tasks.count()
     completed_tasks = Task.objects.filter(complete=True) 
     total_completed_tasks = completed_tasks.count() 
@@ -67,6 +75,7 @@ def deleteTask(request, pk):
 
     context={'item':item}
     return render(request, 'tasks/delete.html', context)
+
 
     
 
