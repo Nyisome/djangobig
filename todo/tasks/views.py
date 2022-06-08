@@ -83,6 +83,6 @@ def deleteTask(request, pk):
 
 
         
-    #also update your urls
+    #.also update your urls
     #kuno ukutsvagei
   
